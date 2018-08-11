@@ -34,8 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php else: ?>
 
         <p>
-            If you have business inquiries or other questions, please fill out the following form to contact us.
-            Thank you.
+            Se você tiver dúvidas sobre negócios ou outras questões, preencha o formulário a seguir para entrar em contato conosco. Obrigado.
         </p>
 
         <div class="row">

@@ -7,7 +7,7 @@ $this->title = 'Biblioteca Municipal';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Biblioteca Particular</h1>
+        <h1>Biblioteca</h1>
 
         <p class="lead">A biblioteca é um universo de livros.</p>
 
