@@ -39,8 +39,16 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Cadastros', 
+            'items'  => [
+                     [ 'label'  =>  'Usuários' , 'url'  => [ '/usuario/index' ]],
+                     [ 'label'  =>  'Títulos' , 'url'  => [ '/titulos/index' ]],
+                     [ 'label'  =>  'Editoras' , 'url'  => [ '/editoras/index' ]],
+                     [ 'label'  =>  'Funcionários' , 'url'  => [ '/funcionarios/index' ]],
+                     [ 'label'  =>  'Alunos' , 'url'  => [ '/alunos/index' ]]]],
+            
+
+            ['label' => 'Contato', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
