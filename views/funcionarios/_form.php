@@ -14,11 +14,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'cpf')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'cpf')->widget(\yii\widgets\MaskedInput::className(), [
+    'mask' => '999.999.999-99',]) ?>
 
-    <?= $form->field($model, 'telefone')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'telefone')->widget(\yii\widgets\MaskedInput::className(), [
+    'mask' => '(99) 9999-9999',]) ?>
 
-    <?= $form->field($model, 'celular')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'celular')->widget(\yii\widgets\MaskedInput::className(), [
+    'mask' => '(99) 99999-9999',]) ?>
 
     <?= $form->field($model, 'endereco')->textInput(['maxlength' => true]) ?>
 

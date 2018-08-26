@@ -46,7 +46,8 @@ AppAsset::register($this);
                      [ 'label'  =>  'Títulos' , 'url'  => [ '/titulos/index' ]],
                      [ 'label'  =>  'Editoras' , 'url'  => [ '/editoras/index' ]],
                      [ 'label'  =>  'Funcionários' , 'url'  => [ '/funcionarios/index' ]],
-                     [ 'label'  =>  'Alunos' , 'url'  => [ '/alunos/index' ]]]],
+                     [ 'label'  =>  'Alunos' , 'url'  => [ '/alunos/index' ]]],'visible' => !Yii::$app->user->isGuest,
+                 ],
             
 
             ['label' => 'Contato', 'url' => ['/site/contact']],
@@ -56,7 +57,7 @@ AppAsset::register($this);
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    'Logout (' . Yii::$app->user->identity->nome . ')',
                     ['class' => 'btn btn-link logout']
                 )
                 . Html::endForm()
@@ -78,7 +79,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Douglas Bergamaschi <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
