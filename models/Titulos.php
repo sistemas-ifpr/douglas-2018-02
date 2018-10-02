@@ -51,6 +51,7 @@ class Titulos extends \yii\db\ActiveRecord
             'isbn' => 'Isbn',
             'edicao' => 'Edicao',
             'ano_lancamento' => 'Ano Lancamento',
+            'referencia' => 'Autor',
         ];
     }
 }

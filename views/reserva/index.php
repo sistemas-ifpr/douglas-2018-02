@@ -6,15 +6,15 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Titulos';
+$this->title = 'Reservas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="titulos-index">
+<div class="reserva-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Titulos', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Reserva', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -23,12 +23,15 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'tipo',
-            'titulo',
-            'autor',
             'isbn',
-            'edicao',
-            'ano_lancamento',
+            //'data_reserva',
+            [
+                'attribute'=>'data_reserva',
+                'format'=>['DateTime','php:d/m/Y']
+            ],
+            'matricula_aluno',
+            'data_baixa',
+            //'funcionario',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

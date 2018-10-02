@@ -14,7 +14,7 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?= Yii::$app->language= 'pt-br' ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,8 +46,10 @@ AppAsset::register($this);
                      [ 'label'  =>  'Títulos' , 'url'  => [ '/titulos/index' ]],
                      [ 'label'  =>  'Editoras' , 'url'  => [ '/editoras/index' ]],
                      [ 'label'  =>  'Funcionários' , 'url'  => [ '/funcionarios/index' ]],
-                     [ 'label'  =>  'Alunos' , 'url'  => [ '/alunos/index' ]]],'visible' => !Yii::$app->user->isGuest,
-                 ],
+                     [ 'label'  =>  'Alunos' , 'url'  => [ '/alunos/index' ]],
+                     [ 'label'  =>  'Reserva' , 'url'  => [ '/reserva/index' ],'visible' => !Yii::$app->user->isGuest],
+                 ]
+             ],
             
 
             ['label' => 'Contato', 'url' => ['/site/contact']],
