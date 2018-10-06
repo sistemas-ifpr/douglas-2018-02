@@ -29,9 +29,27 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute'=>'data_reserva',
                 'format'=>['DateTime','php:d/m/Y']
             ],
-            'matricula_aluno',
+            'matricula_aluno.nome',
+            ['attribute'=>'matricula_aluno',
+                //'label'=> 'Ativo',
+                'value' => function ($model) {
+                    return $model->getMatriculaAluno()->one()->nome;
+                }
+            ],
             'data_baixa',
-            //'funcionario',
+            //'funcionario.nome',
+            ['attribute'=>'funcionario',
+                //'label'=> 'Ativo',
+                'value' => function ($model) {
+                    return $model->getFuncionario()->nome;
+                }
+            ],
+            ['attribute'=>'ativo',
+                //'label'=> 'Ativo',
+                'value' => function ($model) {
+                    return ($model->ativo == 0)? 'Não' : 'Sim';
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

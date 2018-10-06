@@ -14,6 +14,7 @@ use Yii;
  * @property int $isbn
  * @property string $edicao
  * @property string $ano_lancamento
+
  */
 class Titulos extends \yii\db\ActiveRecord
 {
@@ -51,7 +52,10 @@ class Titulos extends \yii\db\ActiveRecord
             'isbn' => 'Isbn',
             'edicao' => 'Edicao',
             'ano_lancamento' => 'Ano Lancamento',
-            'referencia' => 'Autor',
+            'referencia' => 'Referência',
         ];
+    }
+    public function getReferencia(){
+        return $this->autor .'.' .$this->titulo.'.' .$this->edicao.'.' .$this->ano_lancamento.'.';
     }
 }

@@ -14,8 +14,8 @@ use Yii;
  * @property string $data_baixa
  * @property int $funcionario
  *
- * @property CadFuncionarios $funcionario0
- * @property CadTitulos $isbn0
+ * @property CadFuncionarios $funcionario
+ * @property CadTitulos $isbn
  * @property CadAlunos $matriculaAluno
  */
 class Reserva extends \yii\db\ActiveRecord
@@ -34,7 +34,7 @@ class Reserva extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['isbn', 'data_reserva', 'matricula_aluno', 'data_baixa', 'funcionario'], 'required'],
+            [['isbn', 'data_reserva', 'matricula_aluno', 'funcionario', 'ativo'], 'required'],
             [['isbn', 'matricula_aluno', 'funcionario'], 'integer'],
             [['data_reserva', 'data_baixa'], 'safe'],
             [['funcionario'], 'exist', 'skipOnError' => true, 'targetClass' => Funcionarios::className(), 'targetAttribute' => ['funcionario' => 'id']],
@@ -55,6 +55,8 @@ class Reserva extends \yii\db\ActiveRecord
             'matricula_aluno' => 'Matricula Aluno',
             'data_baixa' => 'Data Baixa',
             'funcionario' => 'Funcionario',
+            'ativo' => 'Ativo',
+
         ];
     }
 
@@ -72,7 +74,7 @@ class Reserva extends \yii\db\ActiveRecord
      */
     public function getFuncionario()
     {
-        return $this->hasOne(CadFuncionarios::className(), ['id' => 'funcionario']);
+        return $this->hasOne(Funcionarios::className(), ['id' => 'funcionario'])->one();
     }
 
     /**
@@ -80,7 +82,7 @@ class Reserva extends \yii\db\ActiveRecord
      */
     public function getIsbn()
     {
-        return $this->hasOne(CadTitulos::className(), ['id' => 'isbn']);
+        return $this->hasOne(Titulos::className(), ['id' => 'isbn']);
     }
 
     /**
@@ -88,6 +90,6 @@ class Reserva extends \yii\db\ActiveRecord
      */
     public function getMatriculaAluno()
     {
-        return $this->hasOne(CadAlunos::className(), ['id' => 'matricula_aluno']);
+        return $this->hasOne(Alunos::className(), ['id' => 'matricula_aluno']);
     }
 }

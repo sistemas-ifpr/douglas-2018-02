@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'matricula_aluno',
             'data_baixa',
             'funcionario',
+            'ativo',
         ],
     ]) ?>
 

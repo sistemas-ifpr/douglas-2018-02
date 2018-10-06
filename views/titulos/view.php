@@ -35,10 +35,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'isbn',
             'edicao',
             'ano_lancamento',
+            'referencia',
+            
 
 
         ],
-    ]) ?>
+    ])?> 
+
 
     
 
