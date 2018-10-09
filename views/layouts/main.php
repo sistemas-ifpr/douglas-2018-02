@@ -50,6 +50,7 @@ AppAsset::register($this);
                      [ 'label'  =>  'Reserva' , 'url'  => [ '/reserva/index' ],'visible' => !Yii::$app->user->isGuest],
                  ]
              ],
+              [ 'label'  =>  'Alunos' , 'url'  => [ '/alunos/index' ]],
             
 
             ['label' => 'Contato', 'url' => ['/site/contact']],

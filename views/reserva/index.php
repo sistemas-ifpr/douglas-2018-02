@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute'=>'data_reserva',
                 'format'=>['DateTime','php:d/m/Y']
             ],
-            'matricula_aluno.nome',
+           
             ['attribute'=>'matricula_aluno',
                 //'label'=> 'Ativo',
                 'value' => function ($model) {

@@ -56,6 +56,6 @@ class Titulos extends \yii\db\ActiveRecord
         ];
     }
     public function getReferencia(){
-        return $this->autor .'.' .$this->titulo.'.' .$this->edicao.'.' .$this->ano_lancamento.'.';
+        return $this->autor .'.' .$this->titulo.'.' .$this->edicao.'.'  .$this->ano_lancamento.'.';
     }
 }

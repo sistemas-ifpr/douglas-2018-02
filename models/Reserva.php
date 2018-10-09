@@ -14,9 +14,9 @@ use Yii;
  * @property string $data_baixa
  * @property int $funcionario
  *
- * @property CadFuncionarios $funcionario
- * @property CadTitulos $isbn
- * @property CadAlunos $matriculaAluno
+ * @property Funcionarios $funcionario
+ * @property Titulos $isbn
+ * @property Alunos $matriculaAluno
  */
 class Reserva extends \yii\db\ActiveRecord
 {
@@ -34,7 +34,7 @@ class Reserva extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['isbn', 'data_reserva', 'matricula_aluno', 'funcionario', 'ativo'], 'required'],
+            [['isbn', 'data_reserva', 'matricula_aluno', 'funcionario', 'ativo', 'data_baixa'], 'required'],
             [['isbn', 'matricula_aluno', 'funcionario'], 'integer'],
             [['data_reserva', 'data_baixa'], 'safe'],
             [['funcionario'], 'exist', 'skipOnError' => true, 'targetClass' => Funcionarios::className(), 'targetAttribute' => ['funcionario' => 'id']],
@@ -54,7 +54,7 @@ class Reserva extends \yii\db\ActiveRecord
             'data_reserva' => 'Data Reserva',
             'matricula_aluno' => 'Matricula Aluno',
             'data_baixa' => 'Data Baixa',
-            'funcionario' => 'Funcionario',
+            'funcionario' => 'Funcionário',
             'ativo' => 'Ativo',
 
         ];

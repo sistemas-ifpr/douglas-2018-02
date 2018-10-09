@@ -18,6 +18,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'senha')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'data')->input('date', []) ?>
+
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
