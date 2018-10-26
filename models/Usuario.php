@@ -50,6 +50,54 @@ class Usuario extends \yii\db\ActiveRecord
             'data' => 'Data',
         ];
     }
+    public static function findIdentity($id){
+        return static::findOne(['nome' => $id]);
+
+    }
+
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        return static::findOne(['access_token' => $token]);
+    }
+
+    /**
+     * @return int|string current user ID
+     */
+    public function getId()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * @return string current user auth key
+     */
+    public function getAuthKey()
+    {
+        return $this->auth_key;
+    }
+
+    /**
+     * @param string $authKey
+     * @return bool if auth key is valid for current user
+     */
+    public function validateAuthKey($authKey)
+    {
+        return $this->getAuthKey() === $authKey;
+    }
+
+
+
+    public function validatePassword($password)
+    {
+        return $this->password === $password;
+    }
+
+    public function isAdmin()
+    {
+        return $this -> email === "bergamaschidouglas@gmail.com";
+    }
+
+
     public function beforeValidate() {
         $f = Yii::$app->formatter;
         $this->data = date( 'Y-m-d', strtotime( $this->data ) );

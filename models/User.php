@@ -1,6 +1,7 @@
 <?php
 
 namespace app\models;
+use app\models\Usuario;
 
 class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
 {
@@ -99,7 +100,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public function validatePassword($password)
     {
-        return $this->senha === $password;
+        return $this->password === $password;
     }
     
    

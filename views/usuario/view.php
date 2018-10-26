@@ -39,4 +39,18 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+    <?= DetailView::widget([
+        'model' => $model,
+        'columns' => [
+            'id',
+            'nome',
+            'email:email',
+            'senha',
+            [
+                'attribute'=>'data',
+                'format'=>['DateTime','php:d/m/Y']
+            ],
+        ],
+    ]) ?>
+
 </div>
