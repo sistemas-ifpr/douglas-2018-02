@@ -47,6 +47,7 @@ AppAsset::register($this);
                      [ 'label'  =>  'Editoras' , 'url'  => [ '/editoras/index' ]],
                      [ 'label'  =>  'Funcionários' , 'url'  => [ '/funcionarios/index' ]],
                      [ 'label'  =>  'Alunos' , 'url'  => [ '/alunos/index' ]],
+                     [ 'label'  =>  'Emprestimo' , 'url'  => [ '/emprestimo/index' ]],
                      [ 'label'  =>  'Reserva' , 'url'  => [ '/reserva/index' ],'visible' => !Yii::$app->user->isGuest],
                  ]
              ],

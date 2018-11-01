@@ -33,10 +33,10 @@ class Emprestimo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'titulo', 'data_emprestimo', 'aluno', 'funcionario'], 'required'],
-            [['id', 'titulo', 'aluno', 'funcionario'], 'integer'],
+            [[ 'titulo', 'data_emprestimo', 'aluno', 'funcionario'], 'required'],
+            [[ 'titulo', 'aluno', 'funcionario'], 'integer'],
             [['data_emprestimo'], 'safe'],
-            [['id'], 'unique'],
+           
             [['aluno'], 'exist', 'skipOnError' => true, 'targetClass' => Alunos::className(), 'targetAttribute' => ['aluno' => 'id']],
             [['funcionario'], 'exist', 'skipOnError' => true, 'targetClass' => Funcionarios::className(), 'targetAttribute' => ['funcionario' => 'id']],
             [['titulo'], 'exist', 'skipOnError' => true, 'targetClass' => Titulos::className(), 'targetAttribute' => ['titulo' => 'id']],

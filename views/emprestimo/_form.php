@@ -12,8 +12,6 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id')->textInput() ?>
-
     <?= $form->field($model, 'titulo')->textInput() ?>
 
     <?= $form->field($model, 'data_emprestimo')->textInput() ?>

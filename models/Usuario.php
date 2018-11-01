@@ -13,7 +13,7 @@ use Yii;
  * @property string $senha
  * @property string $data
  */
-class Usuario extends \yii\db\ActiveRecord
+class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
     /**
      * {@inheritdoc}
@@ -51,7 +51,7 @@ class Usuario extends \yii\db\ActiveRecord
         ];
     }
     public static function findIdentity($id){
-        return static::findOne(['nome' => $id]);
+        return static::findOne(['email' => $id]);
 
     }
 
@@ -65,7 +65,7 @@ class Usuario extends \yii\db\ActiveRecord
      */
     public function getId()
     {
-        return $this->nome;
+        return $this->email;
     }
 
     /**
