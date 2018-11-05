@@ -12,6 +12,7 @@ use Yii;
  * @property string $data_emprestimo
  * @property int $aluno
  * @property int $funcionario
+ * @property int $ativo
  *
  * @property Alunos $aluno
  * @property Funcionarios $funcionario
@@ -33,10 +34,9 @@ class Emprestimo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [[ 'titulo', 'data_emprestimo', 'aluno', 'funcionario'], 'required'],
-            [[ 'titulo', 'aluno', 'funcionario'], 'integer'],
+            [['titulo', 'data_emprestimo', 'aluno', 'funcionario', 'ativo', 'data_devolucao'], 'required'],
+            [['titulo', 'aluno', 'funcionario', 'ativo'], 'integer'],
             [['data_emprestimo'], 'safe'],
-           
             [['aluno'], 'exist', 'skipOnError' => true, 'targetClass' => Alunos::className(), 'targetAttribute' => ['aluno' => 'id']],
             [['funcionario'], 'exist', 'skipOnError' => true, 'targetClass' => Funcionarios::className(), 'targetAttribute' => ['funcionario' => 'id']],
             [['titulo'], 'exist', 'skipOnError' => true, 'targetClass' => Titulos::className(), 'targetAttribute' => ['titulo' => 'id']],
@@ -54,6 +54,7 @@ class Emprestimo extends \yii\db\ActiveRecord
             'data_emprestimo' => 'Data Emprestimo',
             'aluno' => 'Aluno',
             'funcionario' => 'Funcionario',
+            'ativo' => 'Ativo',
         ];
     }
 

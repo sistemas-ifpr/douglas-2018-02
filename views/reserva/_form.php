@@ -27,7 +27,7 @@ use \yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'funcionario')->dropDownList(ArrayHelper::map(Funcionarios::find()->all(),'id', 'nome'))?>
 
-    <?= $form->field($model, 'ativo')->dropDownList([ 'Sim' => 'Sim' , 'Não' => 'Não']);?>
+    <?= $form->field($model, 'ativo')->dropDownList([ '1' => 'Sim' , '0' => 'Não']);?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

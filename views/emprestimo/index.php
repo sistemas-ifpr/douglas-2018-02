@@ -24,9 +24,27 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'titulo',
-            'data_emprestimo',
+            //'data_emprestimo',
+            [
+                'attribute'=>'data_emprestimo',
+                'format'=>['DateTime','php:d/m/Y']
+            ],
             'aluno',
+            
             'funcionario',
+            
+            //'ativo',
+            ['attribute'=>'ativo',
+                //'label'=>'Ativo',
+                'value'=>function($model) {
+                    return($model->ativo == 0)? 'Não' : 'Sim';
+                }
+            ],
+            //'data_devolucao',
+            [
+                'attribute'=>'data_devolucao',
+                'format'=>['DateTime','php:d/m/Y']
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
