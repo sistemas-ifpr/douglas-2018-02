@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
     'mask' => '(99) 9999-9999',]) ?>
 
     <?= $form->field($model, 'celular')->widget(\yii\widgets\MaskedInput::className(), [
-    'mask' => '(99) 99999-9999',]) ?>
+    'mask' => '(99) 9 9999-9999',]) ?>
 
     <?= $form->field($model, 'matricula')->textInput() ?>
 
