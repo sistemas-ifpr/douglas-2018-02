@@ -4,7 +4,7 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=biblioteca',
     'username' => 'root',
-    'password' => '',
+    'password' => '',//senha biblioteca@ para o 000webhost
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
