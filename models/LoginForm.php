@@ -64,6 +64,8 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
+
+        
             //if (strtotime($this->data) <= strtotime ($this->$data + 6 month)) {
                
             

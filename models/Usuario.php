@@ -29,7 +29,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['nome', 'email', 'senha'], 'required'],
+            [['nome', 'email', 'senha', 'data'], 'required'],
             [['data'], 'safe'],
             [['nome'], 'string', 'max' => 100],
             [['email'], 'string', 'max' => 150],

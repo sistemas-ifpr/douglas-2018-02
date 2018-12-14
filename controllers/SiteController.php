@@ -77,7 +77,23 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            
+            $user = Yii::$app->user->identity;
+
+            $data = new \DateTime($user->data); // Essa é a data do seu BD
+            $d2 = new \DateTime('now'); // Data de Hoje
+            $data->add(new \DateInterval("P6M")); // Adiciona 6 meses.
+            echo $data->format('d/m/Y H:i') . ' -- ' . $d2->format('d/m/Y H:i') . '<br/>'; // Imprimi para ver o resultado das datas
+
+            if( $d2 < $data){
+                echo "Data Válida!!!";// Aqui é a comparação
+                return $this->goBack();
+              }else if ($d2 > $data){
+                echo "YES";
+                return $this->redirect(['usuario/update', 'id' => $user->id]);
+}
+            
+            
         }
 
         $model->password = '';

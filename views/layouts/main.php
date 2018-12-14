@@ -42,12 +42,12 @@ AppAsset::register($this);
             ['label' => 'Sobre', 'url' => ['/site/about']],
             ['label' => 'Cadastros', 
             'items'  => [
-                     [ 'label'  =>  'Usuários' , 'url'  => [ '/usuario/index' ]],
-                     [ 'label'  =>  'Títulos' , 'url'  => [ '/titulos/index' ]],
-                     [ 'label'  =>  'Editoras' , 'url'  => [ '/editoras/index' ]],
-                     [ 'label'  =>  'Funcionários' , 'url'  => [ '/funcionarios/index' ]],
-                     [ 'label'  =>  'Alunos' , 'url'  => [ '/alunos/index' ]],
-                     [ 'label'  =>  'Emprestimo' , 'url'  => [ '/emprestimo/index' ]],
+                     [ 'label'  =>  'Usuários' , 'url'  => [ '/usuario/index' ],'visible' => !Yii::$app->user->isGuest],
+                     [ 'label'  =>  'Títulos' , 'url'  => [ '/titulos/index' ],'visible' => !Yii::$app->user->isGuest],
+                     [ 'label'  =>  'Editoras' , 'url'  => [ '/editoras/index' ],'visible' => !Yii::$app->user->isGuest],
+                     [ 'label'  =>  'Funcionários' , 'url'  => [ '/funcionarios/index' ],'visible' => !Yii::$app->user->isGuest],
+                     [ 'label'  =>  'Alunos' , 'url'  => [ '/alunos/index' ],'visible' => !Yii::$app->user->isGuest],
+                     [ 'label'  =>  'Emprestimo' , 'url'  => [ '/emprestimo/index' ],'visible' => !Yii::$app->user->isGuest],
                      [ 'label'  =>  'Reserva' , 'url'  => [ '/reserva/index' ],'visible' => !Yii::$app->user->isGuest],
                  ]
              ],
