@@ -16,6 +16,7 @@ class LoginForm extends Model
     public $username;
     public $password;
     public $rememberMe = true;
+    public $data;
 
     private $_user = false;
 
@@ -32,6 +33,8 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
+
+            
         ];
     }
 
@@ -48,6 +51,7 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !($user->senha === $this->password)) {
+              
                 $this->addError($attribute, 'Incorrect username or password.');
             }
         }
@@ -60,10 +64,17 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
+            //if (strtotime($this->data) <= strtotime ($this->$data + 6 month)) {
+               
+            
+               
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
+
         }
+
         return false;
     }
+
 
     /**
      * Finds user by [[username]]

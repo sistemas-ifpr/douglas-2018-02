@@ -32,7 +32,7 @@ class Funcionarios extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'cpf', 'telefone', 'celular', 'endereco', 'data_admissao', 'data_demissao'], 'required'],
+            [['nome', 'cpf', 'telefone', 'celular', 'endereco', 'data_admissao'], 'required'],
             [['data_admissao', 'data_demissao'], 'safe'],
             [['nome', 'cpf', 'endereco'], 'string', 'max' => 80],
             [['telefone', 'celular'], 'string', 'max' => 20],

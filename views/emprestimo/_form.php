@@ -24,7 +24,7 @@ use \yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'funcionario')->dropDownList(ArrayHelper::map(Funcionarios::find()->all(),'id', 'nome'))?>
 
-    <?= $form->field($model, 'data_devolucao')->input('date', []) ?> ?>
+    <?= $form->field($model, 'data_devolucao')->input('date', []) ?> 
 
     <?= $form->field($model, 'ativo')->dropDownList([ '1' => 'Sim' , '0' => 'Não']);?>
 

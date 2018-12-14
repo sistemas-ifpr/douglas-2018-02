@@ -25,9 +25,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'endereco')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'data_admissao')->textInput() ?>
+    <?= $form->field($model, 'data_admissao')->input('date', []) ?>
 
-    <?= $form->field($model, 'data_demissao')->textInput() ?>
+   <?= $form->field($model, 'data_demissao')->input('date', []) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
